@@ -1,13 +1,13 @@
-package com.dankscape;
+package com.harderpvm;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class DankPluginTest
+public class HarderPvMTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(DankPlugin.class);
+		ExternalPluginManager.loadBuiltin(HarderPvMPlugin.class);
 		RuneLite.main(args);
 	}
 }
