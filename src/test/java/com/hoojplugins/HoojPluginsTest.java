@@ -1,13 +1,13 @@
-package com.harderpvm;
+package com.hoojplugins;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class HarderPvMTest
+public class HoojPluginsTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(HarderPvMPlugin.class);
+		ExternalPluginManager.loadBuiltin(HoojPlugins.class);
 		RuneLite.main(args);
 	}
 }
