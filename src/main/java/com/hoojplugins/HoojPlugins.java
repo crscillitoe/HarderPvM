@@ -63,7 +63,7 @@ public class HoojPlugins extends Plugin
 				Tile[][][] tiles = scene.getTiles();
 				for (int z = 0; z < tiles.length; z++) {
 					for (int x = 0; x < tiles[z].length; x++) {
-						for (int y = 0; y < tiles[x][y].length; y++) {
+						for (int y = 0; y < tiles[z][x].length; y++) {
 							Tile tile = tiles[z][x][y];
 							TileObject[] tileObjects = tile.getGameObjects();
 							for (TileObject tileObject : tileObjects) {
@@ -94,6 +94,8 @@ public class HoojPlugins extends Plugin
 				if (tick > 0) {
 					// but we haven't saved data yet
 					tick = 0;
+					poisonPoints.clear();
+
 					Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 
 					JsonArray outerArray = new JsonArray();
