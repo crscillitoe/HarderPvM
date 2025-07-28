@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import net.runelite.api.Scene;
 import net.runelite.api.Tile;
 import net.runelite.api.TileObject;
+import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.ClientTick;
 import com.google.inject.Provides;
@@ -55,8 +56,11 @@ public class HoojPlugins extends Plugin
 	public void onClientTick(ClientTick clientTick)
 	{
 		if (config.delvePoisonDataCollection()) {
-			int regionID = client.getLocalPlayer().getWorldLocation().getRegionID();
+			LocalPoint localPoint = client.getLocalPlayer().getLocalLocation();
+			WorldPoint worldPoint = WorldPoint.fromLocalInstance(client, localPoint);
+			int regionID = worldPoint.getRegionID();
 			boolean delving = regionID == 5269 || regionID == 13668 || regionID == 14180;
+			System.out.println(regionID);
 			if (delving) {
 				tick++;
 				Scene scene = client.getScene();
