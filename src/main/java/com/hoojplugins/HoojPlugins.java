@@ -93,9 +93,6 @@ public class HoojPlugins extends Plugin
 				// not delving
 				if (tick > 0) {
 					// but we haven't saved data yet
-					tick = 0;
-					poisonPoints.clear();
-
 					Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 
 					JsonArray outerArray = new JsonArray();
@@ -126,6 +123,8 @@ public class HoojPlugins extends Plugin
 					parent.addProperty("poison", innerArray.toString());
 
 					clipboard.setContents(new StringSelection(outerArray.toString()), null);
+					tick = 0;
+					poisonPoints.clear();
 				}
 			}
 		}
