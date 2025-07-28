@@ -59,7 +59,7 @@ public class HoojPlugins extends Plugin
 			LocalPoint localPoint = client.getLocalPlayer().getLocalLocation();
 			WorldPoint worldPoint = WorldPoint.fromLocalInstance(client, localPoint);
 			int regionID = worldPoint.getRegionID();
-			boolean delving = regionID == 5269 || regionID == 13668 || regionID == 14180;
+			boolean delving = regionID == 13668 || regionID == 14180;
 			System.out.println(regionID);
 			if (delving) {
 				tick++;
