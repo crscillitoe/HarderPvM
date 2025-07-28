@@ -68,21 +68,23 @@ public class HoojPlugins extends Plugin
 							TileObject[] tileObjects = tile.getGameObjects();
 							for (TileObject tileObject : tileObjects) {
 								// Poison
-								if (tileObject.getId() == 57283) {
-									boolean recorded = false;
-									for (PoisonPoint poisonPoint : poisonPoints) {
-										if (poisonPoint.x == x && poisonPoint.y == y) {
-											recorded = true;
+								if (tileObject != null) {
+									if (tileObject.getId() == 57283) {
+										boolean recorded = false;
+										for (PoisonPoint poisonPoint : poisonPoints) {
+											if (poisonPoint.x == x && poisonPoint.y == y) {
+												recorded = true;
+											}
 										}
-									}
 
-									if (!recorded) {
-										PoisonPoint toAdd = new PoisonPoint();
-										toAdd.x = x;
-										toAdd.y = y;
-										toAdd.tickAdded = tick;
+										if (!recorded) {
+											PoisonPoint toAdd = new PoisonPoint();
+											toAdd.x = x;
+											toAdd.y = y;
+											toAdd.tickAdded = tick;
 
-										poisonPoints.add(toAdd);
+											poisonPoints.add(toAdd);
+										}
 									}
 								}
 							}
